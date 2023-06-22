@@ -1,0 +1,24 @@
+# Only one key can exist at a time. Using the command /portal key set, gives a unique value to the item in the player's
+# hand. This way, you can customise the custom model data to however you'd like, then assign the key
+# Using /portal key set whilst an existing key already exists will make that previous key no longer valid.
+key:
+  # The unique universal identifier for the key. You should not modify this yourself, as the plugin handles this
+  uuid: ''
+  # Remove the key upon being used
+  consume-on-use: true
+event:
+  # The chance for this event to occur on nether portal creation
+  event-chance: 100%
+  # The amount of mobs to spawn upon activating a nether portal. This can be a fixed number such as '4' or a range such
+  # as '4-6' or '6to8'
+  mob-spawn-amount: 4-6
+  # The list of mobs to potentially spawn on a create portal event.
+  # The format is either;
+  # "mythic:<identifier>,<weight>" - Where identifier is the Mythic Mob ID (case sensitive), and weight is the chance
+  #                                  for the mob to spawn. A higher weight means a higher chance of spawning in
+  #                                  comparison to other mobs
+  # OR
+  # "vanilla:<type>,<weight>       - Where type is the mob type, for example zombie or cave_spider. Weight = (see above)
+  mobs:
+  - 'mythic:SkeletalMinion,5'
+  - 'vanilla:zombie,8'

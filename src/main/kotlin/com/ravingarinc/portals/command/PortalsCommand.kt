@@ -52,6 +52,12 @@ class PortalsCommand(plugin: RavinPlugin) : BaseCommand(plugin, "portals", "port
             return@addOption true
         }
 
+        addOption("reload", null, "- Reload from configuration.", 1) { sender, args ->
+            plugin.reload()
+            sender.sendMessage("${ChatColor.GREEN}Successfully reloaded plugin!");
+            return@addOption true
+        }
+
         addHelpOption(ChatColor.DARK_PURPLE, ChatColor.LIGHT_PURPLE)
     }
 }
